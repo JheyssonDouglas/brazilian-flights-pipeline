@@ -1,5 +1,7 @@
 # ✈️ Brazilian Flights Pipeline
 
+🌐 **API ao vivo:** https://brazilian-flights-pipeline.onrender.com/docs
+
 Pipeline de dados end-to-end para análise de voos regulares brasileiros, utilizando dados públicos da ANAC (Agência Nacional de Aviação Civil).
 
 ## 🏗️ Arquitetura
@@ -117,6 +119,47 @@ Acesse: http://localhost:8000/docs
 - **TAP** apresenta consistentemente os maiores atrasos médios entre as internacionais
 - Taxa de cancelamento média do mercado doméstico: ~2%
 - Meses de janeiro e julho concentram os maiores volumes de voos
+
+## 🔍 Exemplos de uso da API
+
+A API está disponível em: **https://brazilian-flights-pipeline.onrender.com**
+
+> ⚠️ O plano gratuito do Render pode demorar até 50 segundos na primeira requisição após inatividade. Aguarde e tente novamente.
+
+### Listar todas as companhias aéreas
+GET https://brazilian-flights-pipeline.onrender.com/airlines
+
+### Performance de uma companhia em um ano específico
+GET https://brazilian-flights-pipeline.onrender.com/performance?airline=GLO&year=2024
+
+### Comparar todas as companhias em 2024
+GET https://brazilian-flights-pipeline.onrender.com/performance/summary?year=2024
+
+### Códigos ICAO das principais companhias brasileiras
+
+| Código | Companhia |
+|---|---|
+| GLO | Gol |
+| AZU | Azul |
+| TAM | LATAM |
+| ACN | Passaredo |
+| PTB | MAP Linhas Aéreas |
+
+### Exemplo de resposta — `/performance/summary?year=2024`
+
+```json
+{
+  "data": [
+    {
+      "airline_icao": "AZU",
+      "total_flights": 8542,
+      "avg_cancellation_rate": 0.85,
+      "avg_departure_delay": 24.3,
+      "avg_delay_rate": 18.2
+    }
+  ]
+}
+```
 
 ## 👤 Autor
 
