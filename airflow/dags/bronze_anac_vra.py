@@ -6,7 +6,7 @@ import base64
 import os
 
 ANAC_BASE_URL = "https://sistemas.anac.gov.br/dadosabertos/Voos%20e%20opera%C3%A7%C3%B5es%20a%C3%A9reas/Voo%20Regular%20Ativo%20%28VRA%29"
-ANOS = [2022, 2023, 2024]
+ANOS = [2022, 2023, 2024, 2025, 2026]
 DATABRICKS_HOST = os.getenv("DATABRICKS_HOST")
 DATABRICKS_TOKEN = os.getenv("DATABRICKS_TOKEN")
 
